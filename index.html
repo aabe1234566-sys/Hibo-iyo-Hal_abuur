@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="so">
 <head>
@@ -7,667 +8,684 @@
 
 <style>
 :root{
-    --primary:#087f5b;
-    --primary-dark:#056044;
-    --gold:#d9a441;
-    --bg:#f5f7f6;
-    --card:#ffffff;
-    --text:#18201d;
-    --muted:#718078;
-    --border:#e3e9e6;
-    --danger:#d64545;
-    --shadow:0 8px 30px rgba(20,50,40,.08);
+  --green:#087f5b;
+  --green2:#0aa477;
+  --dark:#10231d;
+  --text:#18201d;
+  --muted:#718078;
+  --bg:#f0f2f5;
+  --white:#fff;
+  --line:#e1e6e3;
+  --red:#e5484d;
+  --gold:#d9a441;
+  --blue:#1877f2;
+  --shadow:0 2px 8px rgba(0,0,0,.08);
 }
 
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 body{
-    font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    background:var(--bg);
-    color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
 }
 
 button,input,textarea,select{
-    font:inherit;
+  font:inherit;
 }
 
 button{
-    cursor:pointer;
+  cursor:pointer;
 }
 
 .topbar{
-    height:68px;
-    background:#fff;
-    border-bottom:1px solid var(--border);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 5%;
-    position:sticky;
-    top:0;
-    z-index:100;
+  height:64px;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:0 22px;
 }
 
 .logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    color:var(--primary);
-    font-size:21px;
-    font-weight:800;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  color:var(--green);
+  font-weight:900;
+  font-size:20px;
+  min-width:220px;
 }
 
-.logo-mark{
-    width:40px;
-    height:40px;
-    border-radius:13px;
-    background:linear-gradient(135deg,var(--primary),#12a579);
-    color:#fff;
-    display:grid;
-    place-items:center;
-    font-size:20px;
-    box-shadow:0 6px 18px rgba(8,127,91,.2);
+.logo-icon{
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  color:white;
+  background:linear-gradient(135deg,var(--green),var(--green2));
 }
 
 .search{
-    width:min(420px,40vw);
-    position:relative;
+  flex:1;
+  max-width:500px;
+  position:relative;
 }
 
 .search input{
-    width:100%;
-    border:1px solid var(--border);
-    background:#f6f8f7;
-    border-radius:30px;
-    padding:12px 18px 12px 43px;
-    outline:none;
+  width:100%;
+  background:#f1f3f2;
+  border:0;
+  border-radius:25px;
+  padding:12px 18px 12px 42px;
+  outline:none;
 }
 
-.search-icon{
-    position:absolute;
-    left:16px;
-    top:11px;
-    color:var(--muted);
+.search span{
+  position:absolute;
+  left:16px;
+  top:10px;
+  color:#77827d;
 }
 
-.nav-actions{
-    display:flex;
-    align-items:center;
-    gap:10px;
+.top-actions{
+  margin-left:auto;
+  display:flex;
+  gap:8px;
+  align-items:center;
 }
 
-.icon-btn{
-    border:0;
-    background:#f1f5f3;
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    color:#3e5149;
+.circle{
+  width:40px;
+  height:40px;
+  border:0;
+  border-radius:50%;
+  background:#edf0ef;
+  display:grid;
+  place-items:center;
 }
 
 .avatar{
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    object-fit:cover;
-    background:#dcebe5;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  object-fit:cover;
+  background:#dcebe5;
 }
 
 .layout{
-    max-width:1250px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:230px minmax(0,650px) 270px;
-    gap:24px;
-    padding:25px 20px 50px;
+  width:min(1250px,100%);
+  margin:auto;
+  display:grid;
+  grid-template-columns:230px minmax(0,650px) 280px;
+  gap:20px;
+  padding:20px;
 }
 
 .sidebar{
-    position:sticky;
-    top:93px;
-    height:max-content;
+  position:sticky;
+  top:84px;
+  height:max-content;
 }
 
 .menu{
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:10px;
-    box-shadow:var(--shadow);
+  background:white;
+  border-radius:12px;
+  padding:8px;
+  box-shadow:var(--shadow);
 }
 
 .menu button{
-    width:100%;
-    border:0;
-    background:transparent;
-    display:flex;
-    align-items:center;
-    gap:12px;
-    padding:13px;
-    border-radius:12px;
-    color:#46564f;
-    text-align:left;
-    font-weight:600;
+  width:100%;
+  border:0;
+  background:transparent;
+  display:flex;
+  align-items:center;
+  gap:13px;
+  padding:13px;
+  border-radius:9px;
+  color:#42524b;
+  font-weight:700;
+  text-align:left;
 }
 
 .menu button:hover,
 .menu button.active{
-    background:#eaf7f2;
-    color:var(--primary);
+  background:#e8f7f1;
+  color:var(--green);
 }
 
-.menu-title{
-    padding:13px;
-    color:var(--muted);
-    font-size:12px;
-    font-weight:700;
-    text-transform:uppercase;
+.menu .admin{
+  display:none;
+}
+
+.menu .admin.show{
+  display:flex;
 }
 
 .main{
-    min-width:0;
-}
-
-.hero{
-    background:linear-gradient(135deg,#075d45,#0a8e66);
-    border-radius:22px;
-    padding:28px;
-    color:#fff;
-    margin-bottom:18px;
-    overflow:hidden;
-    position:relative;
-}
-
-.hero:after{
-    content:"";
-    width:180px;
-    height:180px;
-    border:35px solid rgba(255,255,255,.08);
-    border-radius:50%;
-    position:absolute;
-    right:-40px;
-    top:-50px;
-}
-
-.hero h1{
-    font-size:28px;
-    margin-bottom:8px;
-}
-
-.hero p{
-    color:#dff4eb;
-    line-height:1.6;
-    max-width:500px;
+  min-width:0;
 }
 
 .card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
-    box-shadow:var(--shadow);
-    margin-bottom:18px;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  margin-bottom:16px;
+  overflow:hidden;
+}
+
+.hero{
+  padding:25px;
+  color:white;
+  background:linear-gradient(135deg,#075d45,#0ba477);
+}
+
+.hero h1{
+  font-size:28px;
+  margin-bottom:7px;
+}
+
+.hero p{
+  line-height:1.6;
+  color:#e2f6ee;
 }
 
 .composer{
-    padding:16px;
+  padding:15px;
 }
 
-.composer-top{
-    display:flex;
-    gap:12px;
-    align-items:center;
+.composer-row{
+  display:flex;
+  gap:10px;
 }
 
 .composer textarea{
-    flex:1;
-    min-height:48px;
-    max-height:130px;
-    resize:none;
-    border:0;
-    background:#f5f7f6;
-    border-radius:15px;
-    padding:14px;
-    outline:none;
+  flex:1;
+  resize:none;
+  border:0;
+  background:#f1f3f2;
+  border-radius:22px;
+  padding:13px 17px;
+  min-height:45px;
+  outline:none;
 }
 
-.composer-tools{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-top:13px;
-    border-top:1px solid var(--border);
-    padding-top:12px;
+.composer-bottom{
+  border-top:1px solid var(--line);
+  margin-top:13px;
+  padding-top:12px;
+  display:flex;
+  gap:10px;
+  align-items:center;
 }
 
-.tool-btn{
-    border:0;
-    background:transparent;
-    color:var(--primary);
-    font-weight:700;
-    padding:8px;
+.composer-bottom label,
+.composer-bottom select{
+  border:0;
+  background:#f5f7f6;
+  padding:9px 12px;
+  border-radius:9px;
+  font-weight:700;
+  color:#52615b;
 }
 
 .primary{
-    border:0;
-    background:var(--primary);
-    color:#fff;
-    padding:10px 18px;
-    border-radius:11px;
-    font-weight:700;
+  background:var(--green);
+  color:white;
+  border:0;
+  border-radius:9px;
+  padding:10px 18px;
+  font-weight:800;
 }
 
 .primary:hover{
-    background:var(--primary-dark);
-}
-
-.post{
-    padding:17px;
-}
-
-.post-head{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.user-info{
-    display:flex;
-    gap:10px;
-    align-items:center;
-}
-
-.user-name{
-    font-weight:800;
-}
-
-.post-time{
-    color:var(--muted);
-    font-size:12px;
-    margin-top:2px;
-}
-
-.more{
-    border:0;
-    background:transparent;
-    color:var(--muted);
-    font-size:20px;
-}
-
-.post-text{
-    line-height:1.8;
-    margin:15px 0;
-    white-space:pre-wrap;
-}
-
-.post-image{
-    width:100%;
-    max-height:520px;
-    object-fit:cover;
-    border-radius:15px;
-    display:block;
-}
-
-.post-actions{
-    display:flex;
-    gap:5px;
-    border-top:1px solid var(--border);
-    margin-top:15px;
-    padding-top:10px;
-}
-
-.post-actions button{
-    flex:1;
-    border:0;
-    background:transparent;
-    padding:10px;
-    color:#617069;
-    border-radius:10px;
-}
-
-.post-actions button:hover{
-    background:#f1f6f4;
-    color:var(--primary);
-}
-
-.post-actions .liked{
-    color:#e04f4f;
-}
-
-.right-card{
-    padding:18px;
-}
-
-.right-card h3{
-    margin-bottom:15px;
-    font-size:16px;
-}
-
-.person{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin:13px 0;
-}
-
-.person-info{
-    flex:1;
-}
-
-.person-info strong{
-    display:block;
-    font-size:14px;
-}
-
-.person-info span{
-    font-size:12px;
-    color:var(--muted);
-}
-
-.follow{
-    border:1px solid var(--primary);
-    color:var(--primary);
-    background:#fff;
-    padding:7px 11px;
-    border-radius:9px;
-    font-size:12px;
-    font-weight:700;
-}
-
-.empty{
-    text-align:center;
-    padding:35px 15px;
-    color:var(--muted);
-}
-
-.page{
-    display:none;
-}
-
-.page.active{
-    display:block;
-}
-
-.profile-cover{
-    height:190px;
-    border-radius:20px 20px 0 0;
-    background:
-      linear-gradient(rgba(3,74,54,.55),rgba(3,74,54,.55)),
-      linear-gradient(135deg,#126d55,#d4a447);
-}
-
-.profile-box{
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:20px;
-    overflow:hidden;
-    margin-bottom:18px;
-}
-
-.profile-content{
-    padding:0 25px 25px;
-}
-
-.profile-avatar{
-    width:105px;
-    height:105px;
-    border-radius:50%;
-    object-fit:cover;
-    border:5px solid #fff;
-    margin-top:-52px;
-    background:#dcebe5;
-}
-
-.profile-name{
-    font-size:25px;
-    font-weight:850;
-    margin-top:8px;
-}
-
-.profile-bio{
-    color:var(--muted);
-    margin-top:6px;
-    line-height:1.6;
-}
-
-.stats{
-    display:flex;
-    gap:30px;
-    margin-top:18px;
-}
-
-.stats strong{
-    display:block;
-}
-
-.stats span{
-    color:var(--muted);
-    font-size:12px;
-}
-
-.profile-buttons{
-    margin-top:18px;
-    display:flex;
-    gap:10px;
+  background:#056b4c;
 }
 
 .secondary{
-    border:1px solid var(--border);
-    background:#fff;
-    padding:10px 17px;
-    border-radius:11px;
-    font-weight:700;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:10px 16px;
+  font-weight:700;
 }
 
-.modal{
-    position:fixed;
-    inset:0;
-    background:rgba(10,25,20,.55);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-    z-index:300;
+.danger{
+  background:var(--red);
+  color:#fff;
+  border:0;
+  border-radius:9px;
+  padding:10px 16px;
+  font-weight:700;
 }
 
-.modal.show{
-    display:flex;
+.post{
+  padding:16px;
 }
 
-.modal-box{
-    background:#fff;
-    width:min(500px,100%);
-    border-radius:20px;
-    padding:22px;
-    max-height:90vh;
-    overflow:auto;
+.post-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.modal-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:18px;
+.user{
+  display:flex;
+  gap:10px;
+  align-items:center;
 }
 
-.close{
-    border:0;
-    background:#f0f3f2;
-    width:35px;
-    height:35px;
-    border-radius:50%;
+.user strong{
+  display:block;
 }
 
-.form-group{
-    margin-bottom:14px;
+.meta{
+  color:var(--muted);
+  font-size:12px;
+  margin-top:3px;
 }
 
-.form-group label{
-    display:block;
-    font-weight:700;
-    font-size:13px;
-    margin-bottom:6px;
+.post-text{
+  white-space:pre-wrap;
+  line-height:1.7;
+  margin:15px 0;
 }
 
-.form-group input,
-.form-group textarea,
-.form-group select{
-    width:100%;
-    border:1px solid var(--border);
-    border-radius:11px;
-    padding:11px;
-    outline:none;
+.post-image{
+  width:100%;
+  max-height:600px;
+  object-fit:cover;
+  border-radius:10px;
 }
 
-.form-group textarea{
-    min-height:110px;
-    resize:vertical;
+.actions{
+  display:flex;
+  border-top:1px solid var(--line);
+  margin-top:14px;
+  padding-top:7px;
 }
 
-.preview{
-    width:100%;
-    max-height:250px;
-    object-fit:cover;
-    border-radius:13px;
-    margin-top:10px;
-    display:none;
+.actions button{
+  flex:1;
+  background:transparent;
+  border:0;
+  padding:10px;
+  color:#64716c;
+  border-radius:7px;
+  font-weight:700;
 }
 
-.group-card{
-    padding:18px;
+.actions button:hover{
+  background:#f1f3f2;
+}
+
+.actions .liked{
+  color:var(--red);
+}
+
+.comment-box{
+  display:none;
+  margin-top:10px;
+}
+
+.comment-box.show{
+  display:flex;
+  gap:8px;
+}
+
+.comment-box input{
+  flex:1;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:10px 14px;
+  outline:none;
+}
+
+.comments{
+  margin-top:10px;
+}
+
+.comment{
+  background:#f1f3f2;
+  border-radius:10px;
+  padding:9px 12px;
+  margin-top:6px;
+  font-size:14px;
+}
+
+.right-card{
+  padding:17px;
+}
+
+.right-card h3{
+  margin-bottom:14px;
+}
+
+.trend{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  padding:9px 0;
+}
+
+.trend-icon{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:#e9f6f1;
+  display:grid;
+  place-items:center;
+}
+
+.trend strong{
+  display:block;
+}
+
+.trend span{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.page{
+  display:none;
+}
+
+.page.active{
+  display:block;
+}
+
+.profile-cover{
+  height:210px;
+  background:linear-gradient(135deg,#075d45,#d7a747);
+}
+
+.profile-body{
+  padding:0 24px 24px;
+}
+
+.profile-avatar{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  border:5px solid white;
+  margin-top:-55px;
+  object-fit:cover;
+  background:#dcebe5;
+}
+
+.profile-name{
+  font-size:26px;
+  font-weight:900;
+  margin-top:8px;
+}
+
+.bio{
+  color:var(--muted);
+  line-height:1.6;
+  margin-top:6px;
+}
+
+.profile-actions{
+  margin-top:17px;
+  display:flex;
+  gap:8px;
+}
+
+.stats{
+  display:flex;
+  gap:35px;
+  margin-top:18px;
+}
+
+.stats strong{
+  display:block;
+  font-size:18px;
+}
+
+.stats span{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.group{
+  padding:17px;
 }
 
 .group-cover{
-    height:120px;
-    border-radius:13px;
-    background:linear-gradient(135deg,#075d45,#d3a445);
-    margin-bottom:15px;
+  height:110px;
+  border-radius:10px;
+  background:linear-gradient(135deg,#075d45,#d7a747);
+  margin-bottom:14px;
 }
 
 .group-row{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
 }
 
-.toast{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    background:#18201d;
-    color:#fff;
-    padding:13px 18px;
-    border-radius:12px;
-    display:none;
-    z-index:500;
+.group-desc{
+  color:var(--muted);
+  margin-top:5px;
+  line-height:1.5;
 }
 
-.toast.show{
-    display:block;
+.badge{
+  display:inline-block;
+  background:#fff3cf;
+  color:#94701c;
+  padding:4px 8px;
+  border-radius:15px;
+  font-size:11px;
+  font-weight:800;
 }
 
-.admin-box{
-    padding:20px;
+.notification{
+  padding:14px;
+  border-bottom:1px solid var(--line);
+}
+
+.notification.unread{
+  background:#eef8f4;
+}
+
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:500;
+  background:rgba(0,0,0,.55);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modal-box{
+  width:min(520px,100%);
+  background:white;
+  border-radius:15px;
+  padding:22px;
+  max-height:90vh;
+  overflow:auto;
+}
+
+.modal-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.close{
+  width:35px;
+  height:35px;
+  border:0;
+  border-radius:50%;
+  background:#eef1f0;
+  font-size:20px;
+}
+
+.field{
+  margin-bottom:14px;
+}
+
+.field label{
+  display:block;
+  font-weight:800;
+  font-size:13px;
+  margin-bottom:6px;
+}
+
+.field input,
+.field textarea,
+.field select{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:11px;
+  outline:none;
+}
+
+.field textarea{
+  min-height:100px;
+  resize:vertical;
+}
+
+.empty{
+  padding:35px;
+  text-align:center;
+  color:var(--muted);
 }
 
 .admin-stat{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-    margin-top:15px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:18px;
 }
 
 .admin-stat div{
-    background:#f5f8f6;
-    border-radius:13px;
-    padding:15px;
+  background:#f3f6f4;
+  border-radius:10px;
+  padding:15px;
 }
 
 .admin-stat strong{
-    display:block;
-    font-size:22px;
-    color:var(--primary);
+  display:block;
+  color:var(--green);
+  font-size:23px;
+  margin-top:4px;
+}
+
+.toast{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:1000;
+  background:#17211d;
+  color:white;
+  padding:13px 17px;
+  border-radius:9px;
+  display:none;
+}
+
+.toast.show{
+  display:block;
 }
 
 @media(max-width:1000px){
-    .layout{
-        grid-template-columns:75px minmax(0,1fr);
-    }
+  .layout{
+    grid-template-columns:70px minmax(0,1fr);
+  }
 
-    .right{
-        display:none;
-    }
+  .right{
+    display:none;
+  }
 
-    .menu button span{
-        display:none;
-    }
+  .menu button span{
+    display:none;
+  }
 
-    .menu button{
-        justify-content:center;
-    }
-
-    .menu-title{
-        display:none;
-    }
+  .menu button{
+    justify-content:center;
+  }
 }
 
 @media(max-width:650px){
-    .topbar{
-        padding:0 12px;
-    }
+  .topbar{
+    padding:0 10px;
+    gap:8px;
+  }
 
-    .logo-text{
-        display:none;
-    }
+  .logo{
+    min-width:auto;
+  }
 
-    .search{
-        width:52%;
-    }
+  .logo-text{
+    display:none;
+  }
 
-    .layout{
-        display:block;
-        padding:15px 10px 80px;
-    }
+  .search{
+    max-width:none;
+  }
 
-    .sidebar{
-        position:fixed;
-        left:0;
-        right:0;
-        bottom:0;
-        top:auto;
-        z-index:200;
-        padding:7px;
-        background:#fff;
-        border-top:1px solid var(--border);
-    }
+  .top-actions .circle{
+    display:none;
+  }
 
-    .menu{
-        display:flex;
-        justify-content:space-around;
-        border:0;
-        box-shadow:none;
-        padding:0;
-    }
+  .layout{
+    display:block;
+    padding:10px 8px 75px;
+  }
 
-    .menu button{
-        width:auto;
-        padding:9px 13px;
-    }
+  .sidebar{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    top:auto;
+    z-index:200;
+    padding:5px;
+    background:#fff;
+    border-top:1px solid var(--line);
+  }
 
-    .hero{
-        padding:22px;
-    }
+  .menu{
+    display:flex;
+    justify-content:space-around;
+    box-shadow:none;
+  }
 
-    .hero h1{
-        font-size:23px;
-    }
+  .menu button{
+    padding:10px 13px;
+  }
 
-    .profile-cover{
-        height:140px;
-    }
+  .hero h1{
+    font-size:23px;
+  }
+
+  .composer-bottom{
+    flex-wrap:wrap;
+  }
+
+  .admin-stat{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -675,1113 +693,2497 @@ button{
 <body>
 
 <header class="topbar">
-    <div class="logo">
-        <div class="logo-mark">H</div>
-        <div class="logo-text">Hibo iyo Hal-abuur</div>
-    </div>
 
-    <div class="search">
-        <span class="search-icon">⌕</span>
-        <input id="searchInput" type="search" placeholder="Raadi qof ama suugaan...">
-    </div>
+  <div class="logo">
+    <div class="logo-icon">H</div>
+    <div class="logo-text">Hibo iyo Hal-abuur</div>
+  </div>
 
-    <div class="nav-actions">
-        <button class="icon-btn" onclick="showNotifications()">🔔</button>
-        <img id="topAvatar" class="avatar" alt="Profile" onclick="openProfile()">
-    </div>
+  <div class="search">
+    <span>🔎</span>
+    <input id="search"
+           type="search"
+           placeholder="Raadi Hibo iyo Hal-abuur...">
+  </div>
+
+  <div class="top-actions">
+    <button class="circle" onclick="showNotifications()">🔔</button>
+    <button class="circle" onclick="showPage('messages')">💬</button>
+    <img id="topAvatar"
+         class="avatar"
+         onclick="openProfile()"
+         alt="Profile">
+  </div>
+
 </header>
 
 <div class="layout">
 
-    <aside class="sidebar">
-        <nav class="menu">
-            <div class="menu-title">Menu</div>
+<aside class="sidebar">
 
-            <button class="active" onclick="showPage('home',this)">
-                🏠 <span>Home</span>
-            </button>
+<nav class="menu">
 
-            <button onclick="showPage('explore',this)">
-                🔎 <span>Explore</span>
-            </button>
+<button class="active" onclick="showPage('home',this)">
+  🏠 <span>Home</span>
+</button>
 
-            <button onclick="showPage('groups',this)">
-                👥 <span>Groups</span>
-            </button>
+<button onclick="showPage('explore',this)">
+  🔎 <span>Explore</span>
+</button>
 
-            <button onclick="openProfile()">
-                👤 <span>Profile</span>
-            </button>
+<button onclick="showPage('groups',this)">
+  👥 <span>Groups</span>
+</button>
 
-            <button onclick="openAdmin()">
-                ⚙️ <span>Admin</span>
-            </button>
-        </nav>
-    </aside>
+<button onclick="showPage('friends',this)">
+  🤝 <span>Friends</span>
+</button>
 
-    <main class="main">
+<button onclick="openProfile()">
+  👤 <span>Profile</span>
+</button>
 
-        <section id="home" class="page active">
+<button onclick="showNotifications()">
+  🔔 <span>Notifications</span>
+</button>
 
-            <div class="hero">
-                <h1>Hibo iyo Hal-abuur</h1>
-                <p>
-                    Meesha ay ku kulmaan hibada, suugaanta,
-                    dhaqanka iyo hal-abuurka Soomaaliyeed.
-                </p>
-            </div>
+<button onclick="showPage('messages',this)">
+  💬 <span>Messages</span>
+</button>
 
-            <div class="card composer">
-                <div class="composer-top">
-                    <img id="composerAvatar" class="avatar">
-                    <textarea id="postText" placeholder="Maxaad maanta hal-abuurkaaga la wadaagaysaa?"></textarea>
-                </div>
+<button id="adminButton"
+        class="admin"
+        onclick="openAdmin()">
+  👑 <span>Admin</span>
+</button>
 
-                <div id="selectedImageName" style="font-size:12px;color:var(--muted);margin-top:8px;"></div>
+</nav>
 
-                <div class="composer-tools">
-                    <label class="tool-btn">
-                        📷 Sawir
-                        <input id="imageInput" type="file" accept="image/*" hidden>
-                    </label>
+</aside>
 
-                    <select id="postCategory" style="border:0;background:#f5f7f6;padding:8px;border-radius:8px;">
-                        <option value="Suugaan">Suugaan</option>
-                        <option value="Maanso">Maanso</option>
-                        <option value="Gabay">Gabay</option>
-                        <option value="Sheeko">Sheeko</option>
-                        <option value="Hal-abuur">Hal-abuur</option>
-                        <option value="Dhaqan">Dhaqan</option>
-                    </select>
+<main class="main">
 
-                    <button class="primary" onclick="createPost()">Daabac</button>
-                </div>
-            </div>
+<!-- HOME -->
 
-            <div id="feed"></div>
+<section id="home" class="page active">
 
-        </section>
+<div class="card hero">
+  <h1>Hibo iyo Hal-abuur</h1>
+  <p>
+    Bulshada Soomaaliyeed ee lagu wadaago
+    suugaan, maanso, gabay, dhaqan iyo hal-abuur.
+  </p>
+</div>
 
-        <section id="explore" class="page">
-            <div class="card" style="padding:20px;">
-                <h2>Explore</h2>
-                <p style="color:var(--muted);margin-top:6px;">
-                    Ka raadi dadka iyo hal-abuurka ku jira Hibo iyo Hal-abuur.
-                </p>
-            </div>
-            <div id="searchResults"></div>
-        </section>
+<div class="card composer">
 
-        <section id="groups" class="page">
-            <div class="card group-card">
-                <h2>Groups</h2>
-                <p style="color:var(--muted);margin:7px 0 18px;">
-                    Dadka isku danaha ahi halkan ayay ku kulmaan.
-                </p>
-                <button class="primary" onclick="createGroup()">+ Samee Group</button>
-            </div>
+<div class="composer-row">
 
-            <div id="groupsList"></div>
-        </section>
+<img id="composerAvatar"
+     class="avatar">
 
-        <section id="profile" class="page">
-            <div id="profileArea"></div>
-        </section>
-
-        <section id="admin" class="page">
-            <div class="card admin-box">
-                <h2>Admin Dashboard</h2>
-                <p style="color:var(--muted);margin-top:5px;">
-                    Maamulka Hibo iyo Hal-abuur
-                </p>
-
-                <div class="admin-stat">
-                    <div>
-                        <span>Users</span>
-                        <strong id="adminUsers">1</strong>
-                    </div>
-
-                    <div>
-                        <span>Posts</span>
-                        <strong id="adminPosts">0</strong>
-                    </div>
-
-                    <div>
-                        <span>Groups</span>
-                        <strong id="adminGroups">0</strong>
-                    </div>
-                </div>
-
-                <div style="margin-top:20px;">
-                    <button class="primary" onclick="editProfile()">Maamul Profile-ka</button>
-                    <button class="secondary" onclick="clearLocalData()">Reset App Data</button>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <aside class="right">
-
-        <div class="card right-card">
-            <h3>Ku cusub bulshada</h3>
-
-            <div class="person">
-                <div class="avatar" style="display:grid;place-items:center;">🎭</div>
-                <div class="person-info">
-                    <strong>Suugaan</strong>
-                    <span>Qaybta suugaanta</span>
-                </div>
-            </div>
-
-            <div class="person">
-                <div class="avatar" style="display:grid;place-items:center;">🌿</div>
-                <div class="person-info">
-                    <strong>Dhaqan</strong>
-                    <span>Hidaha Soomaaliyeed</span>
-                </div>
-            </div>
-
-            <div class="person">
-                <div class="avatar" style="display:grid;place-items:center;">✍️</div>
-                <div class="person-info">
-                    <strong>Hal-abuur</strong>
-                    <span>Qoraallo cusub</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="card right-card">
-            <h3>Ku saabsan</h3>
-            <p style="color:var(--muted);font-size:13px;line-height:1.7;">
-                Hibo iyo Hal-abuur waa madal Soomaaliyeed
-                oo loogu talagalay in lagu wadaago suugaan,
-                dhaqanka iyo hal-abuurka bulshada.
-            </p>
-        </div>
-
-    </aside>
+<textarea id="postText"
+ placeholder="Maxaad maanta la wadaagaysaa?"></textarea>
 
 </div>
+
+<div id="imageName"
+     style="font-size:12px;color:var(--muted);margin-top:8px;">
+</div>
+
+<div class="composer-bottom">
+
+<label>
+📷 Sawir
+<input id="imageInput"
+       type="file"
+       accept="image/*"
+       hidden>
+</label>
+
+<select id="category">
+<option>Suugaan</option>
+<option>Maanso</option>
+<option>Gabay</option>
+<option>Sheeko</option>
+<option>Hal-abuur</option>
+<option>Dhaqan</option>
+</select>
+
+<button class="primary"
+        onclick="createPost()">
+Daabac
+</button>
+
+</div>
+</div>
+
+<div id="feed"></div>
+
+</section>
+
+<!-- EXPLORE -->
+
+<section id="explore" class="page">
+
+<div class="card" style="padding:20px">
+<h2>Explore</h2>
+<p style="color:var(--muted);margin-top:6px">
+Raadi dadka iyo posts-ka bulshada.
+</p>
+</div>
+
+<div id="searchResults"></div>
+
+</section>
+
+<!-- GROUPS -->
+
+<section id="groups" class="page">
+
+<div class="card group">
+
+<h2>Groups</h2>
+
+<p style="color:var(--muted);margin:7px 0 16px">
+Groups-ka waa kuwo gaar ah. Qof aan lagu darin
+ama aan loo oggolaan ma geli karo.
+</p>
+
+<button class="primary"
+        onclick="openGroupModal()">
++ Samee Group
+</button>
+
+</div>
+
+<div id="groupsList"></div>
+
+</section>
+
+<!-- FRIENDS -->
+
+<section id="friends" class="page">
+
+<div class="card" style="padding:20px">
+<h2>Friends & Followers</h2>
+<p style="color:var(--muted);margin-top:7px">
+Dadka aad la socoto iyo dadka ku raaca.
+</p>
+</div>
+
+<div id="friendsList"></div>
+
+</section>
+
+<!-- PROFILE -->
+
+<section id="profile" class="page">
+<div id="profileArea"></div>
+</section>
+
+<!-- NOTIFICATIONS -->
+
+<section id="notifications" class="page">
+
+<div class="card" style="padding:20px">
+<h2>Notifications</h2>
+<p style="color:var(--muted);margin-top:6px">
+Dhammaan ogeysiisyadaada.
+</p>
+</div>
+
+<div class="card" id="notificationsList"></div>
+
+</section>
+
+<!-- MESSAGES -->
+
+<section id="messages" class="page">
+
+<div class="card empty">
+
+<div style="font-size:45px">💬</div>
+
+<h2>Messages</h2>
+
+<p style="margin-top:7px">
+Chat system-ka waxaa lagu xiriirin karaa
+backend-ka marka app-ka online loo dhiso.
+</p>
+
+</div>
+
+</section>
+
+<!-- ADMIN -->
+
+<section id="admin" class="page">
+
+<div class="card" style="padding:20px">
+
+<h2>
+👑 Admin Dashboard
+<span class="badge">HAL-ABUUR HOODO XASAN</span>
+</h2>
+
+<p style="color:var(--muted);margin-top:7px">
+Maamulka guud ee Hibo iyo Hal-abuur.
+</p>
+
+<div class="admin-stat">
+
+<div>
+<span>Users</span>
+<strong id="statUsers">0</strong>
+</div>
+
+<div>
+<span>Posts</span>
+<strong id="statPosts">0</strong>
+</div>
+
+<div>
+<span>Groups</span>
+<strong id="statGroups">0</strong>
+</div>
+
+</div>
+
+<div style="margin-top:20px;display:flex;gap:9px;flex-wrap:wrap">
+
+<button class="primary"
+        onclick="showAdminUsers()">
+Users
+</button>
+
+<button class="secondary"
+        onclick="showAdminGroups()">
+Groups
+</button>
+
+<button class="secondary"
+        onclick="showAdminNotifications()">
+Notifications
+</button>
+
+<button class="danger"
+        onclick="resetApp()">
+Reset App
+</button>
+
+</div>
+
+</div>
+
+<div id="adminContent"></div>
+
+</section>
+
+</main>
+
+<aside class="right">
+
+<div class="card right-card">
+
+<h3>Waxyaabaha socda</h3>
+
+<div class="trend">
+<div class="trend-icon">✍️</div>
+<div>
+<strong>Suugaan</strong>
+<span>Qoraallo cusub</span>
+</div>
+</div>
+
+<div class="trend">
+<div class="trend-icon">🎭</div>
+<div>
+<strong>Maanso</strong>
+<span>Hal-abuur Soomaaliyeed</span>
+</div>
+</div>
+
+<div class="trend">
+<div class="trend-icon">🌿</div>
+<div>
+<strong>Dhaqan</strong>
+<span>Hidaha Soomaaliyeed</span>
+</div>
+</div>
+
+</div>
+
+<div class="card right-card">
+
+<h3>Hibo iyo Hal-abuur</h3>
+
+<p style="color:var(--muted);font-size:13px;line-height:1.7">
+Madal loogu talagalay bulshada Soomaaliyeed
+si ay ula wadaagto suugaan, dhaqanka iyo
+hal-abuurka.
+</p>
+
+</div>
+
+</aside>
+
+</div>
+
+<!-- PROFILE MODAL -->
 
 <div id="profileModal" class="modal">
-    <div class="modal-box">
 
-        <div class="modal-head">
-            <h2>Samee Profile-kaaga</h2>
-            <button class="close" onclick="closeModal('profileModal')">×</button>
-        </div>
+<div class="modal-box">
 
-        <div class="form-group">
-            <label>Magaca</label>
-            <input id="profileName" placeholder="Magacaaga">
-        </div>
-
-        <div class="form-group">
-            <label>Bio</label>
-            <textarea id="profileBio" placeholder="Wax yar oo adiga kugu saabsan..."></textarea>
-        </div>
-
-        <div class="form-group">
-            <label>Sawirka Profile-ka</label>
-            <input id="profileImage" type="file" accept="image/*">
-            <img id="profilePreview" class="preview">
-        </div>
-
-        <button class="primary" onclick="saveProfile()">Kaydi Profile-ka</button>
-    </div>
+<div class="modal-head">
+<h2>Edit Profile</h2>
+<button class="close"
+        onclick="closeModal('profileModal')">×</button>
 </div>
 
+<div class="field">
+<label>Magaca</label>
+<input id="nameInput"
+       placeholder="Magacaaga">
+</div>
+
+<div class="field">
+<label>Bio</label>
+<textarea id="bioInput"
+ placeholder="Wax yar oo adiga kugu saabsan"></textarea>
+</div>
+
+<div class="field">
+<label>Profile Image</label>
+<input id="profileImage"
+       type="file"
+       accept="image/*">
+</div>
+
+<button class="primary"
+        onclick="saveProfile()">
+Kaydi
+</button>
+
+</div>
+</div>
+
+<!-- GROUP MODAL -->
+
 <div id="groupModal" class="modal">
-    <div class="modal-box">
 
-        <div class="modal-head">
-            <h2>Samee Group</h2>
-            <button class="close" onclick="closeModal('groupModal')">×</button>
-        </div>
+<div class="modal-box">
 
-        <div class="form-group">
-            <label>Magaca Group-ka</label>
-            <input id="groupName" placeholder="Tusaale: Abwaannada Soomaaliyeed">
-        </div>
+<div class="modal-head">
+<h2>Samee Private Group</h2>
+<button class="close"
+        onclick="closeModal('groupModal')">×</button>
+</div>
 
-        <div class="form-group">
-            <label>Sharaxaad</label>
-            <textarea id="groupDescription" placeholder="Maxaa group-kan loogu talagalay?"></textarea>
-        </div>
+<div class="field">
+<label>Magaca Group-ka</label>
+<input id="groupName"
+       placeholder="Tusaale: Abwaannada Soomaaliyeed">
+</div>
 
-        <button class="primary" onclick="saveGroup()">Samee Group</button>
-    </div>
+<div class="field">
+<label>Sharaxaad</label>
+<textarea id="groupDescription"
+ placeholder="Maxaa group-kan loogu talagalay?"></textarea>
+</div>
+
+<p style="color:var(--muted);font-size:13px;margin-bottom:15px">
+Group-kan wuxuu noqonayaa private.
+Adiga ayaa go'aaminaya cidda ku biiraysa.
+</p>
+
+<button class="primary"
+        onclick="createGroup()">
+Samee Group
+</button>
+
+</div>
+</div>
+
+<!-- ADMIN LOGIN -->
+
+<div id="adminLogin" class="modal">
+
+<div class="modal-box">
+
+<div class="modal-head">
+<h2>Admin Login</h2>
+<button class="close"
+        onclick="closeModal('adminLogin')">×</button>
+</div>
+
+<p style="color:var(--muted);line-height:1.6;margin-bottom:15px">
+Qaybtan waxaa loogu talagalay maamulka
+app-ka oo keliya.
+</p>
+
+<div class="field">
+<label>Admin Name</label>
+<input id="adminName"
+       placeholder="Hal-abuur Hoodo Xasan">
+</div>
+
+<div class="field">
+<label>Password</label>
+<input id="adminPassword"
+       type="password"
+       placeholder="Admin password">
+</div>
+
+<button class="primary"
+        style="width:100%"
+        onclick="adminLogin()">
+Gal Admin
+</button>
+
+</div>
 </div>
 
 <div id="toast" class="toast"></div>
 
 <script>
-const STORAGE_KEY = "hibo_hal_abuur_v1";
 
-const defaultState = {
-    user: {
-        id: "user_" + Date.now(),
-        name: "",
-        bio: "",
-        image: ""
+/* =================================================
+   HIBO IYO HAL-ABUUR
+   FACEBOOK-STYLE FRONTEND DEMO
+================================================= */
+
+const ADMIN_NAME = "Hal-abuur Hoodo Xasan";
+
+/*
+ IMPORTANT:
+ Tani waa frontend demo.
+ Production-ka password-ka waa in backend lagu
+ xaqiijiyaa, lagumana kaydin JavaScript.
+*/
+
+const STORAGE = "hibo_social_v4";
+
+let data = loadData();
+
+let admin =
+  sessionStorage.getItem("hibo_admin") === "true";
+
+function defaultData(){
+
+  return {
+
+    currentUser:{
+      id:"u_" + Date.now(),
+      name:"Hibo User",
+      bio:"Hal-abuur Soomaaliyeed",
+      image:""
     },
-    posts: [],
-    groups: [],
-    notifications: []
-};
 
-let state = loadState();
+    users:[],
 
-function loadState(){
-    try{
-        const saved = localStorage.getItem(STORAGE_KEY);
+    posts:[],
 
-        if(saved){
-            return JSON.parse(saved);
-        }
-    }catch(error){
-        console.error(error);
-    }
+    groups:[],
 
-    return JSON.parse(JSON.stringify(defaultState));
+    notifications:[],
+
+    following:[],
+
+    followers:[]
+
+  };
+
 }
 
-function saveState(){
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+function loadData(){
+
+  try{
+
+    const saved =
+      localStorage.getItem(STORAGE);
+
+    if(saved){
+
+      const parsed =
+        JSON.parse(saved);
+
+      return parsed;
+
+    }
+
+  }catch(e){
+
+    console.error(e);
+
+  }
+
+  return defaultData();
+
+}
+
+function save(){
+
+  localStorage.setItem(
+    STORAGE,
+    JSON.stringify(data)
+  );
+
 }
 
 function escapeHTML(value){
-    return String(value || "")
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
+
+  return String(value || "")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
 }
 
-function avatarHTML(src, name){
-    if(src){
-        return `<img class="avatar" src="${src}" alt="${escapeHTML(name)}">`;
-    }
+function avatar(name,image){
 
-    const letter = (name || "H").charAt(0).toUpperCase();
+  if(image){
 
     return `
-        <div class="avatar" style="
-            display:grid;
-            place-items:center;
-            background:#dff2eb;
-            color:#087f5b;
-            font-weight:800;
-        ">${letter}</div>
+      <img class="avatar"
+           src="${image}"
+           alt="${escapeHTML(name)}">
     `;
+
+  }
+
+  const letter =
+    (name || "H").charAt(0).toUpperCase();
+
+  return `
+    <div class="avatar"
+         style="
+           display:grid;
+           place-items:center;
+           background:#dff2eb;
+           color:#087f5b;
+           font-weight:900;
+         ">
+      ${escapeHTML(letter)}
+    </div>
+  `;
+
 }
 
 function init(){
 
-    if(!state.user.name){
-        openModal("profileModal");
-    }
+  registerUser();
 
-    updateUserUI();
-    renderFeed();
-    renderGroups();
-    renderProfile();
-    updateAdmin();
+  updateTopUI();
+
+  renderFeed();
+
+  renderGroups();
+
+  renderProfile();
+
+  renderNotifications();
+
+  updateAdminButton();
+
+  updateAdminStats();
+
+  if(!data.currentUser.name ||
+     data.currentUser.name === "Hibo User"){
+
+    setTimeout(
+      ()=>openProfileEditor(),
+      400
+    );
+
+  }
+
 }
 
-function updateUserUI(){
+function registerUser(){
 
-    const avatar = state.user.image;
+  const user =
+    data.currentUser;
 
-    document.getElementById("topAvatar").src =
-        avatar || makeAvatarData(state.user.name || "H");
+  const found =
+    data.users.find(
+      u=>u.id === user.id
+    );
 
-    document.getElementById("composerAvatar").src =
-        avatar || makeAvatarData(state.user.name || "H");
-}
+  if(!found){
 
-function makeAvatarData(name){
-
-    const letter = (name || "H").charAt(0).toUpperCase();
-
-    const svg = `
-        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
-            <rect width="100" height="100" rx="50" fill="#dff2eb"/>
-            <text x="50" y="62"
-                  text-anchor="middle"
-                  font-size="44"
-                  font-family="Arial"
-                  font-weight="700"
-                  fill="#087f5b">${letter}</text>
-        </svg>
-    `;
-
-    return "data:image/svg+xml;charset=UTF-8," +
-        encodeURIComponent(svg);
-}
-
-function showPage(id, button){
-
-    document.querySelectorAll(".page").forEach(page=>{
-        page.classList.remove("active");
+    data.users.push({
+      ...user,
+      createdAt:Date.now()
     });
 
-    const page = document.getElementById(id);
+  }else{
 
-    if(page){
-        page.classList.add("active");
-    }
+    found.name = user.name;
+    found.bio = user.bio;
+    found.image = user.image;
 
-    document.querySelectorAll(".menu button").forEach(btn=>{
-        btn.classList.remove("active");
+  }
+
+  save();
+
+}
+
+function updateTopUI(){
+
+  const image =
+    data.currentUser.image;
+
+  const name =
+    data.currentUser.name;
+
+  document.getElementById(
+    "topAvatar"
+  ).outerHTML =
+    image
+    ?
+    `<img id="topAvatar"
+          class="avatar"
+          src="${image}"
+          onclick="openProfile()">`
+    :
+    `<div id="topAvatar"
+          class="avatar"
+          onclick="openProfile()"
+          style="
+            display:grid;
+            place-items:center;
+            background:#dff2eb;
+            color:#087f5b;
+            font-weight:900;
+          ">
+      ${(name || "H").charAt(0).toUpperCase()}
+    </div>`;
+
+  document.getElementById(
+    "composerAvatar"
+  ).outerHTML =
+    image
+    ?
+    `<img id="composerAvatar"
+          class="avatar"
+          src="${image}">`
+    :
+    `<div id="composerAvatar"
+          class="avatar"
+          style="
+            display:grid;
+            place-items:center;
+            background:#dff2eb;
+            color:#087f5b;
+            font-weight:900;
+          ">
+      ${(name || "H").charAt(0).toUpperCase()}
+    </div>`;
+
+}
+
+function showPage(id,button){
+
+  document
+    .querySelectorAll(".page")
+    .forEach(p=>{
+      p.classList.remove("active");
     });
 
-    if(button){
-        button.classList.add("active");
-    }
+  const page =
+    document.getElementById(id);
 
-    window.scrollTo({top:0,behavior:"smooth"});
+  if(page){
+    page.classList.add("active");
+  }
+
+  document
+    .querySelectorAll(".menu button")
+    .forEach(b=>{
+      b.classList.remove("active");
+    });
+
+  if(button){
+    button.classList.add("active");
+  }
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
 }
 
 function openProfile(){
 
-    showPage("profile");
+  showPage("profile");
 
-    document.querySelectorAll(".menu button").forEach(btn=>{
-        btn.classList.remove("active");
-    });
+  renderProfile();
 
-    renderProfile();
 }
+
+function openProfileEditor(){
+
+  document.getElementById(
+    "nameInput"
+  ).value =
+    data.currentUser.name === "Hibo User"
+    ? ""
+    : data.currentUser.name;
+
+  document.getElementById(
+    "bioInput"
+  ).value =
+    data.currentUser.bio || "";
+
+  openModal("profileModal");
+
+}
+
+function openModal(id){
+
+  document
+    .getElementById(id)
+    .classList.add("show");
+
+}
+
+function closeModal(id){
+
+  document
+    .getElementById(id)
+    .classList.remove("show");
+
+}
+
+/* ================= POSTS ================= */
 
 function createPost(){
 
-    if(!state.user.name){
-        showToast("Marka hore samee profile-kaaga.");
-        openModal("profileModal");
-        return;
+  const text =
+    document
+      .getElementById("postText")
+      .value
+      .trim();
+
+  if(!text){
+
+    toast("Qoraal geli.");
+
+    return;
+
+  }
+
+  const category =
+    document.getElementById(
+      "category"
+    ).value;
+
+  const input =
+    document.getElementById(
+      "imageInput"
+    );
+
+  const post = {
+
+    id:"p_" + Date.now(),
+
+    userId:
+      data.currentUser.id,
+
+    userName:
+      data.currentUser.name,
+
+    userImage:
+      data.currentUser.image,
+
+    text,
+
+    category,
+
+    image:"",
+
+    likes:[],
+
+    comments:[],
+
+    createdAt:Date.now()
+
+  };
+
+  if(input.files[0]){
+
+    if(
+      input.files[0].size >
+      5 * 1024 * 1024
+    ){
+
+      toast(
+        "Sawirku waa inuu ka yaraadaa 5MB."
+      );
+
+      return;
+
     }
 
-    const text = document.getElementById("postText").value.trim();
-    const category = document.getElementById("postCategory").value;
-    const imageInput = document.getElementById("imageInput");
+    const reader =
+      new FileReader();
 
-    if(!text){
-        showToast("Qoraal ama suugaan geli.");
-        return;
-    }
+    reader.onload =
+      e=>{
 
-    const post = {
-        id:"post_" + Date.now(),
-        userId:state.user.id,
-        userName:state.user.name,
-        userImage:state.user.image,
-        text,
-        category,
-        image:"",
-        likes:[],
-        comments:[],
-        createdAt:Date.now()
-    };
+        post.image =
+          e.target.result;
 
-    if(imageInput.files && imageInput.files[0]){
+        publish(post);
 
-        const file = imageInput.files[0];
+      };
 
-        if(file.size > 5 * 1024 * 1024){
-            showToast("Sawirku waa inuu ka yaraadaa 5MB.");
-            return;
-        }
+    reader.readAsDataURL(
+      input.files[0]
+    );
 
-        const reader = new FileReader();
+  }else{
 
-        reader.onload = function(event){
+    publish(post);
 
-            post.image = event.target.result;
+  }
 
-            state.posts.unshift(post);
-
-            saveState();
-
-            clearComposer();
-            renderFeed();
-            updateAdmin();
-
-            showToast("Suugaantaada waa la daabacay.");
-        };
-
-        reader.readAsDataURL(file);
-
-    }else{
-
-        state.posts.unshift(post);
-
-        saveState();
-
-        clearComposer();
-        renderFeed();
-        updateAdmin();
-
-        showToast("Suugaantaada waa la daabacay.");
-    }
 }
 
-function clearComposer(){
+function publish(post){
 
-    document.getElementById("postText").value = "";
-    document.getElementById("imageInput").value = "";
-    document.getElementById("selectedImageName").textContent = "";
+  data.posts.unshift(post);
+
+  save();
+
+  document.getElementById(
+    "postText"
+  ).value = "";
+
+  document.getElementById(
+    "imageInput"
+  ).value = "";
+
+  document.getElementById(
+    "imageName"
+  ).textContent = "";
+
+  renderFeed();
+
+  updateAdminStats();
+
+  toast("Post-ka waa la daabacay.");
+
 }
-
-document.getElementById("imageInput").addEventListener("change",function(){
-
-    if(this.files && this.files[0]){
-        document.getElementById("selectedImageName").textContent =
-            "📷 " + this.files[0].name;
-    }
-});
 
 function renderFeed(){
 
-    const feed = document.getElementById("feed");
+  const feed =
+    document.getElementById("feed");
 
-    if(!state.posts.length){
+  if(!data.posts.length){
 
-        feed.innerHTML = `
-            <div class="card empty">
-                <div style="font-size:40px;margin-bottom:10px;">✍️</div>
-                <h3>Weli wax post ah ma jiraan</h3>
-                <p style="margin-top:6px;">
-                    Noqo qofka ugu horreeya ee bulshada la wadaaga hal-abuurkiisa.
-                </p>
-            </div>
-        `;
+    feed.innerHTML = `
+      <div class="card empty">
+        <div style="font-size:45px">✍️</div>
+        <h3>Weli post ma jiro</h3>
+        <p style="margin-top:6px">
+          Noqo qofka ugu horreeya ee wax daabaca.
+        </p>
+      </div>
+    `;
 
-        return;
-    }
+    return;
 
-    feed.innerHTML = state.posts.map(post=>{
+  }
 
-        const liked = post.likes.includes(state.user.id);
+  feed.innerHTML =
+    data.posts
+      .map(renderPost)
+      .join("");
 
-        return `
-        <article class="card post">
-
-            <div class="post-head">
-
-                <div class="user-info">
-                    ${avatarHTML(post.userImage,post.userName)}
-
-                    <div>
-                        <div class="user-name">
-                            ${escapeHTML(post.userName)}
-                        </div>
-
-                        <div class="post-time">
-                            ${escapeHTML(post.category)} · ${timeAgo(post.createdAt)}
-                        </div>
-                    </div>
-                </div>
-
-                <button class="more">⋯</button>
-            </div>
-
-            <div class="post-text">
-                ${escapeHTML(post.text)}
-            </div>
-
-            ${
-                post.image
-                ? `<img class="post-image" src="${post.image}" alt="Sawirka post-ka">`
-                : ""
-            }
-
-            <div class="post-actions">
-
-                <button class="${liked ? "liked" : ""}"
-                    onclick="toggleLike('${post.id}')">
-                    ${liked ? "❤️" : "♡"} ${post.likes.length}
-                </button>
-
-                <button onclick="commentPost('${post.id}')">
-                    💬 ${post.comments.length}
-                </button>
-
-                <button onclick="sharePost('${post.id}')">
-                    ↗ Share
-                </button>
-
-            </div>
-
-        </article>
-        `;
-    }).join("");
 }
 
-function toggleLike(id){
+function renderPost(post){
 
-    const post = state.posts.find(item=>item.id === id);
+  const liked =
+    post.likes.includes(
+      data.currentUser.id
+    );
 
-    if(!post){
-        return;
+  return `
+
+  <article class="card post">
+
+    <div class="post-head">
+
+      <div class="user">
+
+        ${avatar(
+          post.userName,
+          post.userImage
+        )}
+
+        <div>
+          <strong>
+            ${escapeHTML(post.userName)}
+          </strong>
+
+          <div class="meta">
+            ${escapeHTML(post.category)}
+            ·
+            ${timeAgo(post.createdAt)}
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="post-text">
+      ${escapeHTML(post.text)}
+    </div>
+
+    ${
+      post.image
+      ?
+      `<img class="post-image"
+            src="${post.image}"
+            alt="Post image">`
+      :
+      ""
     }
 
-    const index = post.likes.indexOf(state.user.id);
+    <div class="actions">
 
-    if(index === -1){
-        post.likes.push(state.user.id);
-    }else{
-        post.likes.splice(index,1);
-    }
+      <button
+        class="${liked ? "liked" : ""}"
+        onclick="likePost('${post.id}')">
 
-    saveState();
-    renderFeed();
+        ${liked ? "❤️" : "♡"}
+        ${post.likes.length}
+
+      </button>
+
+      <button
+        onclick="toggleComments('${post.id}')">
+
+        💬
+        ${post.comments.length}
+
+      </button>
+
+      <button
+        onclick="sharePost('${post.id}')">
+
+        ↗ Share
+
+      </button>
+
+    </div>
+
+    <div id="comment-${post.id}"
+         class="comment-box">
+
+      <input
+        id="input-${post.id}"
+        placeholder="Qor comment...">
+
+      <button
+        class="primary"
+        onclick="addComment('${post.id}')">
+        Dir
+      </button>
+
+    </div>
+
+    <div class="comments">
+
+      ${
+        post.comments
+          .slice(-5)
+          .map(c=>`
+            <div class="comment">
+              <strong>
+                ${escapeHTML(c.userName)}
+              </strong>
+              <div>
+                ${escapeHTML(c.text)}
+              </div>
+            </div>
+          `)
+          .join("")
+      }
+
+    </div>
+
+  </article>
+
+  `;
+
 }
 
-function commentPost(id){
+function likePost(id){
 
-    const text = prompt("Qoraalkaaga geli:");
+  const post =
+    data.posts.find(
+      p=>p.id === id
+    );
 
-    if(!text || !text.trim()){
-        return;
-    }
+  if(!post) return;
 
-    const post = state.posts.find(item=>item.id === id);
+  const index =
+    post.likes.indexOf(
+      data.currentUser.id
+    );
 
-    if(!post){
-        return;
-    }
+  if(index === -1){
 
-    post.comments.push({
-        id:"comment_" + Date.now(),
-        userId:state.user.id,
-        userName:state.user.name || "User",
-        text:text.trim(),
-        createdAt:Date.now()
-    });
+    post.likes.push(
+      data.currentUser.id
+    );
 
-    saveState();
-    renderFeed();
+  }else{
 
-    showToast("Comment-ka waa la daray.");
+    post.likes.splice(
+      index,
+      1
+    );
+
+  }
+
+  save();
+
+  renderFeed();
+
+}
+
+function toggleComments(id){
+
+  const box =
+    document.getElementById(
+      "comment-" + id
+    );
+
+  box.classList.toggle("show");
+
+}
+
+function addComment(id){
+
+  const input =
+    document.getElementById(
+      "input-" + id
+    );
+
+  const text =
+    input.value.trim();
+
+  if(!text) return;
+
+  const post =
+    data.posts.find(
+      p=>p.id === id
+    );
+
+  if(!post) return;
+
+  post.comments.push({
+
+    id:"c_" + Date.now(),
+
+    userId:
+      data.currentUser.id,
+
+    userName:
+      data.currentUser.name,
+
+    text,
+
+    createdAt:Date.now()
+
+  });
+
+  save();
+
+  renderFeed();
+
+  toast("Comment-ka waa la diray.");
+
 }
 
 async function sharePost(id){
 
-    const post = state.posts.find(item=>item.id === id);
+  const post =
+    data.posts.find(
+      p=>p.id === id
+    );
 
-    if(!post){
-        return;
+  if(!post) return;
+
+  const text =
+    post.userName +
+    ": " +
+    post.text;
+
+  if(navigator.share){
+
+    try{
+
+      await navigator.share({
+        title:"Hibo iyo Hal-abuur",
+        text
+      });
+
+    }catch(e){}
+
+  }else{
+
+    try{
+
+      await navigator.clipboard.writeText(
+        text
+      );
+
+      toast(
+        "Post-ka waa la copy gareeyay."
+      );
+
+    }catch(e){
+
+      toast(
+        "Share lama heli karo."
+      );
+
     }
 
-    const shareText = `${post.userName}: ${post.text}`;
+  }
 
-    if(navigator.share){
-
-        try{
-            await navigator.share({
-                title:"Hibo iyo Hal-abuur",
-                text:shareText
-            });
-        }catch(error){}
-    }else{
-
-        try{
-            await navigator.clipboard.writeText(shareText);
-            showToast("Post-ka waa la copy gareeyay.");
-        }catch(error){
-            showToast("Share lama heli karo qalabkan.");
-        }
-    }
 }
 
-function openModal(id){
-    document.getElementById(id).classList.add("show");
-}
-
-function closeModal(id){
-    document.getElementById(id).classList.remove("show");
-}
-
-function editProfile(){
-
-    document.getElementById("profileName").value =
-        state.user.name || "";
-
-    document.getElementById("profileBio").value =
-        state.user.bio || "";
-
-    openModal("profileModal");
-}
-
-document.getElementById("profileImage").addEventListener("change",function(){
-
-    if(!this.files || !this.files[0]){
-        return;
-    }
-
-    const reader = new FileReader();
-
-    reader.onload = function(event){
-
-        const preview = document.getElementById("profilePreview");
-
-        preview.src = event.target.result;
-        preview.style.display = "block";
-    };
-
-    reader.readAsDataURL(this.files[0]);
-});
+/* ================= PROFILE ================= */
 
 function saveProfile(){
 
-    const name = document.getElementById("profileName").value.trim();
-    const bio = document.getElementById("profileBio").value.trim();
-    const imageInput = document.getElementById("profileImage");
+  const name =
+    document
+      .getElementById("nameInput")
+      .value
+      .trim();
 
-    if(name.length < 2){
-        showToast("Magac sax ah geli.");
-        return;
+  const bio =
+    document
+      .getElementById("bioInput")
+      .value
+      .trim();
+
+  if(name.length < 2){
+
+    toast("Magac geli.");
+
+    return;
+
+  }
+
+  const input =
+    document.getElementById(
+      "profileImage"
+    );
+
+  data.currentUser.name = name;
+  data.currentUser.bio = bio;
+
+  if(input.files[0]){
+
+    if(
+      input.files[0].size >
+      5 * 1024 * 1024
+    ){
+
+      toast(
+        "Sawirku waa inuu ka yaraadaa 5MB."
+      );
+
+      return;
+
     }
 
-    state.user.name = name;
-    state.user.bio = bio;
+    const reader =
+      new FileReader();
 
-    if(imageInput.files && imageInput.files[0]){
+    reader.onload =
+      e=>{
 
-        if(imageInput.files[0].size > 5 * 1024 * 1024){
-            showToast("Sawirka waa inuu ka yaraadaa 5MB.");
-            return;
-        }
+        data.currentUser.image =
+          e.target.result;
 
-        const reader = new FileReader();
+        finishProfile();
 
-        reader.onload = function(event){
+      };
 
-            state.user.image = event.target.result;
+    reader.readAsDataURL(
+      input.files[0]
+    );
 
-            saveProfileFinal();
-        };
+  }else{
 
-        reader.readAsDataURL(imageInput.files[0]);
+    finishProfile();
 
-    }else{
+  }
 
-        saveProfileFinal();
-    }
 }
 
-function saveProfileFinal(){
+function finishProfile(){
 
-    state.posts.forEach(post=>{
+  data.posts.forEach(post=>{
 
-        if(post.userId === state.user.id){
+    if(
+      post.userId ===
+      data.currentUser.id
+    ){
 
-            post.userName = state.user.name;
-            post.userImage = state.user.image;
-        }
-    });
+      post.userName =
+        data.currentUser.name;
 
-    saveState();
+      post.userImage =
+        data.currentUser.image;
 
-    updateUserUI();
-    renderProfile();
-    renderFeed();
+    }
 
-    closeModal("profileModal");
+  });
 
-    showToast("Profile-ka waa la kaydiyay.");
+  registerUser();
+
+  save();
+
+  updateTopUI();
+
+  renderProfile();
+
+  renderFeed();
+
+  closeModal("profileModal");
+
+  toast("Profile-ka waa la kaydiyay.");
+
 }
 
 function renderProfile(){
 
-    const area = document.getElementById("profileArea");
+  const area =
+    document.getElementById(
+      "profileArea"
+    );
 
-    const ownPosts =
-        state.posts.filter(post=>post.userId === state.user.id);
+  const posts =
+    data.posts.filter(
+      p=>
+        p.userId ===
+        data.currentUser.id
+    );
 
-    area.innerHTML = `
-        <div class="profile-box">
+  area.innerHTML = `
 
-            <div class="profile-cover"></div>
+  <div class="card">
 
-            <div class="profile-content">
+    <div class="profile-cover"></div>
 
-                <img class="profile-avatar"
-                    src="${state.user.image || makeAvatarData(state.user.name || "H")}"
-                    alt="Profile">
+    <div class="profile-body">
 
-                <div class="profile-name">
-                    ${escapeHTML(state.user.name || "Magacaaga")}
-                </div>
+      ${
+        avatar(
+          data.currentUser.name,
+          data.currentUser.image
+        )
+      }
 
-                <div class="profile-bio">
-                    ${escapeHTML(state.user.bio || "Ku soo dhawoow Hibo iyo Hal-abuur.")}
-                </div>
+      <div class="profile-name">
+        ${escapeHTML(
+          data.currentUser.name
+        )}
+      </div>
 
-                <div class="stats">
-                    <div>
-                        <strong>${ownPosts.length}</strong>
-                        <span>Posts</span>
-                    </div>
+      <div class="bio">
+        ${escapeHTML(
+          data.currentUser.bio
+        )}
+      </div>
 
-                    <div>
-                        <strong>0</strong>
-                        <span>Followers</span>
-                    </div>
+      <div class="stats">
 
-                    <div>
-                        <strong>0</strong>
-                        <span>Following</span>
-                    </div>
-                </div>
-
-                <div class="profile-buttons">
-                    <button class="primary" onclick="editProfile()">
-                        Edit Profile
-                    </button>
-
-                    <button class="secondary" onclick="showPage('groups')">
-                        Groups
-                    </button>
-                </div>
-
-            </div>
+        <div>
+          <strong>${posts.length}</strong>
+          <span>Posts</span>
         </div>
 
-        <h3 style="margin:20px 0 12px;">Suugaantayda</h3>
-
-        <div id="myPosts">
-            ${
-                ownPosts.length
-                ? ownPosts.map(post=>renderProfilePost(post)).join("")
-                : `<div class="card empty">Weli waxba ma aadan soo gelin.</div>`
-            }
+        <div>
+          <strong>${data.followers.length}</strong>
+          <span>Followers</span>
         </div>
-    `;
+
+        <div>
+          <strong>${data.following.length}</strong>
+          <span>Following</span>
+        </div>
+
+      </div>
+
+      <div class="profile-actions">
+
+        <button
+          class="primary"
+          onclick="openProfileEditor()">
+          Edit Profile
+        </button>
+
+        <button
+          class="secondary"
+          onclick="showPage('groups')">
+          Groups
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <h3 style="margin:20px 0 10px">
+    Posts-kaaga
+  </h3>
+
+  ${
+    posts.length
+    ?
+    posts.map(renderPost).join("")
+    :
+    `<div class="card empty">
+      Weli wax post ah ma aadan gelin.
+    </div>`
+  }
+
+  `;
+
 }
 
-function renderProfilePost(post){
+/* ================= GROUPS ================= */
 
-    return `
-        <div class="card post">
+function openGroupModal(){
 
-            <div class="post-time">
-                ${escapeHTML(post.category)} · ${timeAgo(post.createdAt)}
-            </div>
+  document.getElementById(
+    "groupName"
+  ).value = "";
 
-            <div class="post-text">
-                ${escapeHTML(post.text)}
-            </div>
+  document.getElementById(
+    "groupDescription"
+  ).value = "";
 
-            ${
-                post.image
-                ? `<img class="post-image" src="${post.image}" alt="Sawir">`
-                : ""
-            }
-        </div>
-    `;
-}
+  openModal("groupModal");
 
-function searchUsers(query){
-
-    const results = document.getElementById("searchResults");
-
-    query = query.trim().toLowerCase();
-
-    if(!query){
-
-        results.innerHTML = `
-            <div class="card empty">
-                Qor magaca qofka aad rabto inaad raadiso.
-            </div>
-        `;
-
-        return;
-    }
-
-    const matches = [];
-
-    if(state.user.name.toLowerCase().includes(query)){
-        matches.push(state.user);
-    }
-
-    state.posts.forEach(post=>{
-
-        if(
-            post.userName.toLowerCase().includes(query) &&
-            !matches.some(item=>item.id === post.userId)
-        ){
-            matches.push({
-                id:post.userId,
-                name:post.userName,
-                image:post.userImage,
-                bio:"Hal-abuur ku jira bulshada"
-            });
-        }
-    });
-
-    if(!matches.length){
-
-        results.innerHTML = `
-            <div class="card empty">
-                Qof ama content la mid ah raadintaada lama helin.
-            </div>
-        `;
-
-        return;
-    }
-
-    results.innerHTML = matches.map(user=>`
-        <div class="card" style="padding:15px;">
-            <div class="person">
-                ${avatarHTML(user.image,user.name)}
-
-                <div class="person-info">
-                    <strong>${escapeHTML(user.name)}</strong>
-                    <span>${escapeHTML(user.bio || "Hal-abuur Soomaaliyeed")}</span>
-                </div>
-
-                ${
-                    user.id !== state.user.id
-                    ? `<button class="follow" onclick="followUser('${user.id}')">Raac</button>`
-                    : ""
-                }
-            </div>
-        </div>
-    `).join("");
-}
-
-document.getElementById("searchInput").addEventListener("input",function(){
-
-    showPage("explore");
-
-    searchUsers(this.value);
-});
-
-function followUser(id){
-
-    state.notifications.unshift({
-        id:"notification_" + Date.now(),
-        text:"Waxaad bilowday inaad raacdo qof cusub.",
-        createdAt:Date.now()
-    });
-
-    saveState();
-
-    showToast("Waad raacday.");
-}
-
-function renderGroups(){
-
-    const list = document.getElementById("groupsList");
-
-    if(!state.groups.length){
-
-        list.innerHTML = `
-            <div class="card empty">
-                <div style="font-size:40px;">👥</div>
-                <h3>Weli Group lama samayn</h3>
-                <p style="margin-top:5px;">
-                    Samee group-ka ugu horreeya.
-                </p>
-            </div>
-        `;
-
-        return;
-    }
-
-    list.innerHTML = state.groups.map(group=>`
-
-        <div class="card group-card">
-
-            <div class="group-cover"></div>
-
-            <div class="group-row">
-                <div>
-                    <h3>${escapeHTML(group.name)}</h3>
-                    <p style="color:var(--muted);margin-top:5px;">
-                        ${escapeHTML(group.description)}
-                    </p>
-                </div>
-
-                <button class="primary" onclick="joinGroup('${group.id}')">
-                    Ku biir
-                </button>
-            </div>
-
-        </div>
-    `).join("");
 }
 
 function createGroup(){
 
-    if(!state.user.name){
-        openModal("profileModal");
-        return;
-    }
+  const name =
+    document.getElementById(
+      "groupName"
+    ).value.trim();
 
-    document.getElementById("groupName").value = "";
-    document.getElementById("groupDescription").value = "";
+  const description =
+    document.getElementById(
+      "groupDescription"
+    ).value.trim();
 
-    openModal("groupModal");
+  if(!name){
+
+    toast("Magaca group-ka geli.");
+
+    return;
+
+  }
+
+  const group = {
+
+    id:"g_" + Date.now(),
+
+    name,
+
+    description:
+      description ||
+      "Private Hibo iyo Hal-abuur Group",
+
+    ownerId:
+      data.currentUser.id,
+
+    ownerName:
+      data.currentUser.name,
+
+    members:[
+      data.currentUser.id
+    ],
+
+    pending:[],
+
+    createdAt:Date.now()
+
+  };
+
+  data.groups.push(group);
+
+  save();
+
+  closeModal("groupModal");
+
+  renderGroups();
+
+  updateAdminStats();
+
+  toast(
+    "Group-ka waa la sameeyay."
+  );
+
 }
 
-function saveGroup(){
+function renderGroups(){
 
-    const name = document.getElementById("groupName").value.trim();
-    const description =
-        document.getElementById("groupDescription").value.trim();
+  const list =
+    document.getElementById(
+      "groupsList"
+    );
 
-    if(!name){
-        showToast("Magaca group-ka geli.");
-        return;
-    }
+  if(!data.groups.length){
 
-    state.groups.push({
-        id:"group_" + Date.now(),
-        name,
-        description,
-        ownerId:state.user.id,
-        members:[state.user.id],
-        createdAt:Date.now()
-    });
+    list.innerHTML = `
+      <div class="card empty">
+        <div style="font-size:45px">👥</div>
+        <h3>Weli Group ma jiro</h3>
+      </div>
+    `;
 
-    saveState();
+    return;
 
-    closeModal("groupModal");
-    renderGroups();
-    updateAdmin();
+  }
 
-    showToast("Group-ka waa la sameeyay.");
+  list.innerHTML =
+    data.groups
+      .map(group=>{
+
+        const owner =
+          group.ownerId ===
+          data.currentUser.id;
+
+        const member =
+          group.members.includes(
+            data.currentUser.id
+          );
+
+        const pending =
+          group.pending.includes(
+            data.currentUser.id
+          );
+
+        return `
+
+        <div class="card group">
+
+          <div class="group-cover"></div>
+
+          <div class="group-row">
+
+            <div>
+
+              <h3>
+                ${escapeHTML(group.name)}
+
+                ${
+                  owner
+                  ?
+                  `<span class="badge">
+                    Group Admin
+                  </span>`
+                  :
+                  ""
+                }
+
+              </h3>
+
+              <div class="group-desc">
+                ${escapeHTML(
+                  group.description
+                )}
+              </div>
+
+              <div class="meta">
+                ${group.members.length}
+                member(s)
+              </div>
+
+            </div>
+
+            ${
+              owner
+              ?
+              `<button
+                class="secondary"
+                onclick="manageGroup('${group.id}')">
+                Maamul
+              </button>`
+              :
+              member
+              ?
+              `<button
+                class="secondary"
+                disabled>
+                Waad ku jirtaa
+              </button>`
+              :
+              pending
+              ?
+              `<button
+                class="secondary"
+                disabled>
+                Codsi la diray
+              </button>`
+              :
+              `<button
+                class="primary"
+                onclick="requestGroup('${group.id}')">
+                Codso Ku-biirid
+              </button>`
+            }
+
+          </div>
+
+        </div>
+
+        `;
+
+      })
+      .join("");
+
 }
 
-function joinGroup(id){
+function requestGroup(id){
 
-    const group = state.groups.find(item=>item.id === id);
+  const group =
+    data.groups.find(
+      g=>g.id === id
+    );
 
-    if(!group){
-        return;
-    }
+  if(!group) return;
 
-    if(!group.members.includes(state.user.id)){
-        group.members.push(state.user.id);
-    }
+  if(
+    group.members.includes(
+      data.currentUser.id
+    )
+  ){
 
-    saveState();
+    toast("Hore ayaad ugu jirtay.");
 
-    showToast("Group-ka waad ku biirtay.");
+    return;
+
+  }
+
+  if(
+    group.pending.includes(
+      data.currentUser.id
+    )
+  ){
+
+    toast("Codsiga hore ayaa loo diray.");
+
+    return;
+
+  }
+
+  group.pending.push(
+    data.currentUser.id
+  );
+
+  data.notifications.unshift({
+
+    id:"n_" + Date.now(),
+
+    type:"group_request",
+
+    groupId:group.id,
+
+    groupName:group.name,
+
+    userId:data.currentUser.id,
+
+    userName:data.currentUser.name,
+
+    text:
+      data.currentUser.name +
+      " wuxuu codsaday inuu ku biiro " +
+      group.name,
+
+    createdAt:Date.now(),
+
+    unread:true
+
+  });
+
+  save();
+
+  renderGroups();
+
+  renderNotifications();
+
+  toast(
+    "Codsiga Group-ka waa la diray."
+  );
+
 }
+
+function manageGroup(id){
+
+  const group =
+    data.groups.find(
+      g=>g.id === id
+    );
+
+  if(!group) return;
+
+  if(
+    group.ownerId !==
+    data.currentUser.id
+  ){
+
+    toast(
+      "Kaliya Group Admin-ka ayaa maamuli kara."
+    );
+
+    return;
+
+  }
+
+  const requests =
+    group.pending.length;
+
+  const action =
+    prompt(
+      "GROUP ADMIN\n\n" +
+      "1 = Arag codsiyada (" +
+      requests +
+      ")\n" +
+      "2 = Beddel magaca\n" +
+      "3 = Tirtir Group"
+    );
+
+  if(action === "1"){
+
+    if(!group.pending.length){
+
+      alert("Codsi cusub ma jiro.");
+
+      return;
+
+    }
+
+    const userId =
+      group.pending[0];
+
+    const user =
+      data.users.find(
+        u=>u.id === userId
+      );
+
+    if(!user){
+
+      group.pending.shift();
+
+      save();
+
+      renderGroups();
+
+      return;
+
+    }
+
+    const approve =
+      confirm(
+        user.name +
+        "\n\nMa oggolaanaysaa inuu ku biiro?"
+      );
+
+    if(approve){
+
+      group.members.push(
+        user.id
+      );
+
+      group.pending =
+        group.pending.filter(
+          id=>id !== user.id
+        );
+
+      data.notifications.unshift({
+
+        id:"n_" + Date.now(),
+
+        type:"group_approved",
+
+        userId:user.id,
+
+        groupId:group.id,
+
+        text:
+          "Waxaa laguu oggolaaday inaad ku biirto " +
+          group.name,
+
+        createdAt:Date.now(),
+
+        unread:true
+
+      });
+
+      save();
+
+      renderGroups();
+
+      renderNotifications();
+
+      toast(
+        "Qofka waa lagu daray Group-ka."
+      );
+
+    }
+
+  }
+
+  if(action === "2"){
+
+    const newName =
+      prompt(
+        "Magaca cusub:",
+        group.name
+      );
+
+    if(
+      newName &&
+      newName.trim()
+    ){
+
+      group.name =
+        newName.trim();
+
+      save();
+
+      renderGroups();
+
+      toast(
+        "Magaca waa la beddelay."
+      );
+
+    }
+
+  }
+
+  if(action === "3"){
+
+    if(
+      confirm(
+        "Ma hubtaa inaad tirtirayso Group-kan?"
+      )
+    ){
+
+      data.groups =
+        data.groups.filter(
+          g=>g.id !== id
+        );
+
+      save();
+
+      renderGroups();
+
+      updateAdminStats();
+
+      toast(
+        "Group-ka waa la tirtiray."
+      );
+
+    }
+
+  }
+
+}
+
+/* ================= SEARCH ================= */
+
+document
+  .getElementById("search")
+  .addEventListener(
+    "input",
+    function(){
+
+      const q =
+        this.value
+          .trim()
+          .toLowerCase();
+
+      if(!q){
+
+        return;
+
+      }
+
+      showPage("explore");
+
+      const users =
+        data.users.filter(
+          u=>
+            u.name
+              .toLowerCase()
+              .includes(q)
+        );
+
+      const posts =
+        data.posts.filter(
+          p=>
+            p.text
+              .toLowerCase()
+              .includes(q)
+        );
+
+      const box =
+        document.getElementById(
+          "searchResults"
+        );
+
+      box.innerHTML = `
+
+      <div class="card"
+           style="padding:16px">
+
+        <h3>Dadka</h3>
+
+        ${
+          users.length
+          ?
+          users.map(u=>`
+
+            <div class="trend">
+
+              ${avatar(u.name,u.image)}
+
+              <div>
+                <strong>
+                  ${escapeHTML(u.name)}
+                </strong>
+
+                <span>
+                  ${escapeHTML(u.bio)}
+                </span>
+              </div>
+
+            </div>
+
+          `).join("")
+          :
+          `<p class="meta">
+            Qof lama helin.
+          </p>`
+        }
+
+      </div>
+
+      <div class="card"
+           style="padding:16px">
+
+        <h3>Posts</h3>
+
+        ${
+          posts.length
+          ?
+          posts.map(renderPost).join("")
+          :
+          `<p class="meta">
+            Post lama helin.
+          </p>`
+        }
+
+      </div>
+
+      `;
+
+    }
+  );
+
+/* ================= FRIENDS ================= */
+
+function renderFriends(){
+
+  const list =
+    document.getElementById(
+      "friendsList"
+    );
+
+  const people =
+    data.users.filter(
+      u=>
+        u.id !==
+        data.currentUser.id
+    );
+
+  if(!people.length){
+
+    list.innerHTML =
+      `<div class="card empty">
+        Weli users kale ma jiraan.
+      </div>`;
+
+    return;
+
+  }
+
+  list.innerHTML =
+    people.map(u=>`
+
+      <div class="card"
+           style="padding:15px">
+
+        <div class="user">
+
+          ${avatar(u.name,u.image)}
+
+          <div style="flex:1">
+            <strong>
+              ${escapeHTML(u.name)}
+            </strong>
+
+            <div class="meta">
+              ${escapeHTML(u.bio)}
+            </div>
+          </div>
+
+          <button
+            class="primary"
+            onclick="followUser('${u.id}')">
+            ${
+              data.following.includes(u.id)
+              ?
+              "Waad raacdaa"
+              :
+              "Raac"
+            }
+          </button>
+
+        </div>
+
+      </div>
+
+    `).join("");
+
+}
+
+function followUser(id){
+
+  if(
+    !data.following.includes(id)
+  ){
+
+    data.following.push(id);
+
+    const user =
+      data.users.find(
+        u=>u.id === id
+      );
+
+    if(user){
+
+      data.notifications.unshift({
+
+        id:"n_" + Date.now(),
+
+        type:"follow",
+
+        text:
+          "Waxaad hadda raacaysaa " +
+          user.name,
+
+        createdAt:Date.now(),
+
+        unread:true
+
+      });
+
+    }
+
+    save();
+
+    renderNotifications();
+
+    toast("Waad raacday.");
+
+  }
+
+  renderFriends();
+
+}
+
+/* ================= NOTIFICATIONS ================= */
 
 function showNotifications(){
 
-    if(!state.notifications.length){
+  showPage("notifications");
 
-        showToast("Weli notification cusub ma jiro.");
-        return;
-    }
+  renderNotifications();
 
-    alert(
-        state.notifications
-            .slice(0,10)
-            .map(item=>item.text)
-            .join("\n")
+}
+
+function renderNotifications(){
+
+  const box =
+    document.getElementById(
+      "notificationsList"
     );
+
+  if(!data.notifications.length){
+
+    box.innerHTML =
+      `<div class="empty">
+        🔔<br>
+        Weli notification ma jiro.
+      </div>`;
+
+    return;
+
+  }
+
+  box.innerHTML =
+    data.notifications
+      .slice(0,50)
+      .map(n=>`
+
+        <div class="notification
+          ${n.unread ? "unread" : ""}">
+
+          <strong>
+            ${escapeHTML(n.text)}
+          </strong>
+
+          <div class="meta">
+            ${timeAgo(n.createdAt)}
+          </div>
+
+        </div>
+
+      `)
+      .join("");
+
+  data.notifications.forEach(
+    n=>n.unread=false
+  );
+
+  save();
+
+}
+
+/* ================= ADMIN ================= */
+
+function updateAdminButton(){
+
+  const button =
+    document.getElementById(
+      "adminButton"
+    );
+
+  if(admin){
+
+    button.classList.add("show");
+
+  }else{
+
+    button.classList.remove("show");
+
+  }
+
 }
 
 function openAdmin(){
 
-    showPage("admin");
+  if(!admin){
 
-    document.querySelectorAll(".menu button").forEach(btn=>{
-        btn.classList.remove("active");
-    });
+    openModal("adminLogin");
 
-    updateAdmin();
+    return;
+
+  }
+
+  showPage("admin");
+
+  updateAdminStats();
+
+  showAdminUsers();
+
 }
 
-function updateAdmin(){
+function adminLogin(){
 
-    document.getElementById("adminUsers").textContent =
-        state.user.name ? "1" : "0";
+  const name =
+    document.getElementById(
+      "adminName"
+    ).value.trim();
 
-    document.getElementById("adminPosts").textContent =
-        state.posts.length;
+  const password =
+    document.getElementById(
+      "adminPassword"
+    ).value;
 
-    document.getElementById("adminGroups").textContent =
-        state.groups.length;
-}
+  /*
+    Demo login.
+    Production-ka backend ayaa xaqiijinaya.
+  */
 
-function clearLocalData(){
+  if(
+    name.toLowerCase() ===
+      ADMIN_NAME.toLowerCase() &&
+    password === "HoodoAdmin123"
+  ){
 
-    const confirmed = confirm(
-        "Ma hubtaa inaad tirtirayso xogta app-kan ee qalabkan?"
+    admin = true;
+
+    sessionStorage.setItem(
+      "hibo_admin",
+      "true"
     );
 
-    if(!confirmed){
-        return;
-    }
+    closeModal("adminLogin");
 
-    localStorage.removeItem(STORAGE_KEY);
-    location.reload();
+    updateAdminButton();
+
+    showPage("admin");
+
+    updateAdminStats();
+
+    showAdminUsers();
+
+    toast(
+      "Ku soo dhawoow Admin Hoodo Xasan."
+    );
+
+  }else{
+
+    toast(
+      "Admin information-ka waa khalad."
+    );
+
+  }
+
 }
+
+function updateAdminStats(){
+
+  if(!admin) return;
+
+  document.getElementById(
+    "statUsers"
+  ).textContent =
+    data.users.length;
+
+  document.getElementById(
+    "statPosts"
+  ).textContent =
+    data.posts.length;
+
+  document.getElementById(
+    "statGroups"
+  ).textContent =
+    data.groups.length;
+
+}
+
+function showAdminUsers(){
+
+  if(!admin) return;
+
+  const box =
+    document.getElementById(
+      "adminContent"
+    );
+
+  box.innerHTML = `
+
+    <div class="card"
+         style="padding:17px">
+
+      <h3>Users</h3>
+
+      ${
+        data.users.length
+        ?
+        data.users.map(u=>`
+
+          <div class="user"
+               style="
+                 padding:12px 0;
+                 border-bottom:1px solid var(--line);
+               ">
+
+            ${avatar(u.name,u.image)}
+
+            <div style="flex:1">
+
+              <strong>
+                ${escapeHTML(u.name)}
+              </strong>
+
+              <div class="meta">
+                ${escapeHTML(u.bio)}
+              </div>
+
+            </div>
+
+          </div>
+
+        `).join("")
+        :
+        `<div class="empty">
+          User ma jiro.
+        </div>`
+      }
+
+    </div>
+
+  `;
+
+}
+
+function showAdminGroups(){
+
+  if(!admin) return;
+
+  const box =
+    document.getElementById(
+      "adminContent"
+    );
+
+  box.innerHTML = `
+
+    <div class="card"
+         style="padding:17px">
+
+      <h3>Groups</h3>
+
+      ${
+        data.groups.length
+        ?
+        data.groups.map(g=>`
+
+          <div style="
+            padding:13px 0;
+            border-bottom:1px solid var(--line);
+          ">
+
+            <strong>
+              ${escapeHTML(g.name)}
+            </strong>
+
+            <div class="meta">
+              Owner:
+              ${escapeHTML(g.ownerName)}
+              ·
+              ${g.members.length} members
+              ·
+              ${g.pending.length} pending
+            </div>
+
+          </div>
+
+        `).join("")
+        :
+        `<div class="empty">
+          Group ma jiro.
+        </div>`
+      }
+
+    </div>
+
+  `;
+
+}
+
+function showAdminNotifications(){
+
+  if(!admin) return;
+
+  const box =
+    document.getElementById(
+      "adminContent"
+    );
+
+  const groupRequests =
+    data.notifications.filter(
+      n=>n.type === "group_request"
+    );
+
+  box.innerHTML = `
+
+    <div class="card"
+         style="padding:17px">
+
+      <h3>Group Join Requests</h3>
+
+      ${
+        groupRequests.length
+        ?
+        groupRequests.map(n=>`
+
+          <div class="notification">
+
+            <strong>
+              ${escapeHTML(n.userName)}
+            </strong>
+
+            <p style="margin-top:5px">
+              ${escapeHTML(n.text)}
+            </p>
+
+            <div class="meta">
+              ${timeAgo(n.createdAt)}
+            </div>
+
+          </div>
+
+        `).join("")
+        :
+        `<div class="empty">
+          Codsi cusub ma jiro.
+        </div>`
+      }
+
+    </div>
+
+  `;
+
+}
+
+function resetApp(){
+
+  if(!admin){
+
+    toast("Admin kaliya.");
+
+    return;
+
+  }
+
+  if(
+    confirm(
+      "Tani waxay tirtiraysaa xogta demo-ga. Ma hubtaa?"
+    )
+  ){
+
+    localStorage.removeItem(
+      STORAGE
+    );
+
+    sessionStorage.removeItem(
+      "hibo_admin"
+    );
+
+    location.reload();
+
+  }
+
+}
+
+/* ================= UTILITY ================= */
 
 function timeAgo(timestamp){
 
-    const seconds = Math.floor(
-        (Date.now() - timestamp) / 1000
+  const seconds =
+    Math.floor(
+      (Date.now() - timestamp) / 1000
     );
 
-    if(seconds < 60){
-        return "Hadda";
-    }
+  if(seconds < 60)
+    return "Hadda";
 
-    const minutes = Math.floor(seconds / 60);
+  const minutes =
+    Math.floor(seconds / 60);
 
-    if(minutes < 60){
-        return minutes + " daqiiqo ka hor";
-    }
+  if(minutes < 60)
+    return minutes + " daqiiqo ka hor";
 
-    const hours = Math.floor(minutes / 60);
+  const hours =
+    Math.floor(minutes / 60);
 
-    if(hours < 24){
-        return hours + " saacadood ka hor";
-    }
+  if(hours < 24)
+    return hours + " saac ka hor";
 
-    const days = Math.floor(hours / 24);
+  const days =
+    Math.floor(hours / 24);
 
-    if(days < 7){
-        return days + " maalmood ka hor";
-    }
+  return days + " maalmood ka hor";
 
-    return new Date(timestamp).toLocaleDateString("so-SO");
 }
 
-function showToast(message){
+function toast(message){
 
-    const toast = document.getElementById("toast");
+  const box =
+    document.getElementById("toast");
 
-    toast.textContent = message;
-    toast.classList.add("show");
+  box.textContent =
+    message;
 
-    setTimeout(()=>{
-        toast.classList.remove("show");
-    },2500);
+  box.classList.add("show");
+
+  setTimeout(
+    ()=>box.classList.remove("show"),
+    2500
+  );
+
 }
 
-document.addEventListener("keydown",function(event){
+document
+  .getElementById("imageInput")
+  .addEventListener(
+    "change",
+    function(){
 
-    if(event.key === "Escape"){
+      document.getElementById(
+        "imageName"
+      ).textContent =
+        this.files[0]
+        ?
+        "📷 " + this.files[0].name
+        :
+        "";
 
-        document.querySelectorAll(".modal").forEach(modal=>{
-            modal.classList.remove("show");
-        });
     }
-});
+  );
+
+document.addEventListener(
+  "keydown",
+  e=>{
+
+    if(e.key === "Escape"){
+
+      document
+        .querySelectorAll(".modal")
+        .forEach(
+          m=>m.classList.remove("show")
+        );
+
+    }
+
+  }
+);
+
+/* START */
 
 init();
+
+renderFriends();
+
 </script>
 
 </body>
